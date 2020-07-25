@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_search">
+    app:startDestination="@+id/navigation_featured">
 
     <fragment
         android:id="@+id/navigation_search"
@@ -18,6 +18,12 @@
         tools:layout="@layout/fragment_scanlist" />
 
     <fragment
+        android:id="@+id/navigation_featured"
+        android:name="nitjsr.team.in.ragnarok.Fragments.FeaturedFragment"
+        android:label="@string/title_featured"
+        tools:layout="@layout/fragment_start_shopping" />
+
+    <fragment
         android:id="@+id/navigation_scan_list"
         android:name="nitjsr.team.in.ragnarok.Fragments.ScanListFragment"
         android:label="@string/title_scan_list"
@@ -29,9 +35,5 @@
         android:label="@string/title_start_shopping"
         tools:layout="@layout/fragment_scanlist" />
 
-    <fragment
-        android:id="@+id/navigation_featured"
-        android:name="nitjsr.team.in.ragnarok.Fragments.FeaturedFragment"
-        android:label="@string/title_featured"
-        tools:layout="@layout/fragment_start_shopping" />
+
 </navigation>

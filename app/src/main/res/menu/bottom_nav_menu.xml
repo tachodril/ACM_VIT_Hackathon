@@ -12,6 +12,11 @@
         android:title="@string/title_shopping_list" />
 
     <item
+        android:id="@+id/navigation_featured"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_featured" />
+
+    <item
         android:id="@+id/navigation_scan_list"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_scan_list" />
@@ -21,9 +26,6 @@
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_start_shopping" />
 
-    <item
-        android:id="@+id/navigation_featured"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_featured" />
+
 
 </menu>
