@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "645612907412",
+    "firebase_url": "https://team-ragnarok-apptitude-20.firebaseio.com",
+    "project_id": "team-ragnarok-apptitude-20",
+    "storage_bucket": "team-ragnarok-apptitude-20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645612907412:android:5424e159fdcd4671027d81",
+        "android_client_info": {
+          "package_name": "nitjsr.team.in.ragnarok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645612907412-5pph1kcja19i3he2ap8eh8f174p2hqbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF9bjIiaiXGh8qXg3yDItl0ywimynDiQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645612907412-5pph1kcja19i3he2ap8eh8f174p2hqbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
