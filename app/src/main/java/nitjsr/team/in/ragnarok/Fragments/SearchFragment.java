@@ -17,6 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
 import nitjsr.team.in.ragnarok.R;
+import nitjsr.team.in.ragnarok.utils.AppConstants;
 
 public class SearchFragment extends Fragment {
 
@@ -38,6 +39,14 @@ public class SearchFragment extends Fragment {
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (AppConstants.mItemList.size() == 0) {
+                    if (AppConstants.isNetworkAvailable(getActivity())) {
+                        AppConstants.fetchGoodsItemList(getActivity());
+                    } else {
+                        Toast.makeText(getActivity(), "Please make sure you have a secure internet connection.", Toast.LENGTH_SHORT).show();
+                    }
+                    return;
+                }
                 startActivity(new Intent(getContext(), SearchItemActivity.class));
             }
         });
