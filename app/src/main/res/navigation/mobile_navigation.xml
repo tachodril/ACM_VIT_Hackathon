@@ -3,23 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_search">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="nitjsr.team.in.ragnarok.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_search"
+        android:name="nitjsr.team.in.ragnarok.Fragments.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_shopping_list" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="nitjsr.team.in.ragnarok.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_shopping_list"
+        android:name="nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment"
+        android:label="@string/title_shopping_list"
+        tools:layout="@layout/fragment_scanlist" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="nitjsr.team.in.ragnarok.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_scan_list"
+        android:name="nitjsr.team.in.ragnarok.Fragments.ScanListFragment"
+        android:label="@string/title_scan_list"
+        tools:layout="@layout/fragment_start_shopping" />
+
+    <fragment
+        android:id="@+id/navigation_start_shopping"
+        android:name="nitjsr.team.in.ragnarok.Fragments.StartShoppingFragment"
+        android:label="@string/title_start_shopping"
+        tools:layout="@layout/fragment_scanlist" />
+
+    <fragment
+        android:id="@+id/navigation_featured"
+        android:name="nitjsr.team.in.ragnarok.Fragments.FeaturedFragment"
+        android:label="@string/title_featured"
+        tools:layout="@layout/fragment_start_shopping" />
 </navigation>
