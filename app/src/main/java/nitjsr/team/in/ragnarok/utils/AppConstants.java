@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,6 +35,7 @@ import java.util.List;
 
 import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
 import nitjsr.team.in.ragnarok.Activity.SearchResultsActivity;
+import nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment;
 import nitjsr.team.in.ragnarok.Modals.ItemModal;
 import nitjsr.team.in.ragnarok.Modals.ListItem;
 import nitjsr.team.in.ragnarok.R;
@@ -42,7 +44,7 @@ public class AppConstants {
     public static ArrayList<ItemModal> mItemList = new ArrayList<>();
     public static SearchItemActivity mSearchProductActivity;
     public static SearchResultsActivity mSearchResultsActivity;
-    //public static CreateShoppingListActivity mCreateShoppingListActivity;
+    public static FragmentActivity mCreateShoppingListActivity;
     public static boolean isCreateShoppingListActivityOpen = false;
     public static String searchKeyWord = "";
     public static String listFromScan = "";
