@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
 import nitjsr.team.in.ragnarok.R;
-import nitjsr.team.in.ragnarok.SearchItemActivity;
 
 public class SearchFragment extends Fragment {
 
