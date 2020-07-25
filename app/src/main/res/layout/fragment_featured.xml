@@ -29,6 +29,62 @@
             app:tabPaddingStart="5.5dp" />
 
 
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/lowes_logo"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/notosans"
+            android:text="Welcome to the App, Where you can locate the items inside the big retail stores like Reliance, BigBaazaar, etc."
+            android:textAlignment="center"
+            android:textSize="16sp"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+
+            <Button
+                android:id="@+id/aboutApp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/notosans"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:text="About App"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="20dp"></Button>
+
+            <Button
+                android:id="@+id/aboutUs"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/notosans"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:text="About Us"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="50dp"></Button>
+        </LinearLayout>
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,9 +92,11 @@
             android:layout_marginTop="25dp"
             android:alpha="0.5"
             android:fontFamily="@font/notosans"
-            android:text="Featured Categories"
+            android:text="Featured Websites"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
 
         <!--        featured categories-->
         <LinearLayout
