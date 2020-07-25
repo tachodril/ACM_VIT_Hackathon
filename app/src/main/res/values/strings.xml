@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ACM_VIT_Hackathon</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_search">Search Item</string>
+    <string name="title_shopping_list">Shopping List</string>
+    <string name="title_scan_list">Scan List</string>
+    <string name="title_start_shopping">Start Shopping</string>
+    <string name="title_featured">Featured Websites</string>
 </resources>
