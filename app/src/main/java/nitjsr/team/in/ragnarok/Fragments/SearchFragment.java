@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
 import nitjsr.team.in.ragnarok.R;
-//import nitjsr.team.in.ragnarok.SearchItemActivity;
 
 public class SearchFragment extends Fragment {
 
@@ -38,7 +38,7 @@ public class SearchFragment extends Fragment {
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(getContext(), SearchItemActivity.class));
+                startActivity(new Intent(getContext(), SearchItemActivity.class));
             }
         });
 //        textInputLayout.setOnClickListener(new View.OnClickListener() {
