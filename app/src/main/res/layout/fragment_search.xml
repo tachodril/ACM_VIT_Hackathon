@@ -7,35 +7,45 @@
     android:layout_height="match_parent">
     <EditText
         android:textSize="18sp"
+        android:layout_centerInParent="true"
         android:id="@+id/search_input"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:editable="false"
         android:background="@null"
-        android:hint="Search it..."
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Click 2 times...here"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:id="@+id/search_input"-->
-<!--        android:layout_marginLeft="12dp"-->
-<!--        android:layout_marginRight="12dp"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="18dp"-->
-<!--        android:hint="Search a product"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:id="@+id/search_text"-->
-<!--            android:textSize="18sp"-->
-<!--            android:textColor="#000"-->
-<!--            android:editable="false"-->
-<!--            android:background="@null"-->
-<!--            android:layout_height="wrap_content"/>-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
+    <RelativeLayout
+        android:id="@+id/search_bar2"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:id="@+id/search_input2"
+            android:hint="Search a product"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/search_text"
+                android:textSize="18sp"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="#000"
+                android:editable="false"
+                android:background="@null"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
 
 <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/search_results_list"-->

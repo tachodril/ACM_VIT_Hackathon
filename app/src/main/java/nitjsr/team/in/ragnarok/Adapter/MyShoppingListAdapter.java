@@ -63,9 +63,9 @@ public class MyShoppingListAdapter extends RecyclerView.Adapter<MyShoppingListAd
 
         final ListItem listItem = myItemList.get(position);
 
-        if (!listItem.isStatus()) {
-            myShoppingListViewHolder.checkBox.setButtonDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
-        }
+//        if (!listItem.isStatus()) {
+//            myShoppingListViewHolder.checkBox.setButtonDrawable(R.drawable.ic_check_box_outline_blank_black_24dp);
+//        }
 
         myShoppingListViewHolder.mItemName.setText(listItem.getName());
 
@@ -136,38 +136,38 @@ public class MyShoppingListAdapter extends RecyclerView.Adapter<MyShoppingListAd
         });
 
         if (listItem.isStatus()) {
-            myShoppingListViewHolder.checkBox.setChecked(true);
+            //myShoppingListViewHolder.checkBox.setChecked(true);
         }
 
-        myShoppingListViewHolder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    ListItem listItem1 = itemList.get(position);
-                    itemList.remove(position);
-                    listItem1.setStatus(true);
-                    itemList.add(listItem1);
-
-                } else {
-                    ListItem listItem1 = itemList.get(position);
-                    itemList.remove(position);
-
-                    listItem1.setStatus(false);
-                    itemList.add(0, listItem1);
-                }
-
-                Gson gson = new Gson();
-                String json = gson.toJson(itemList);
-
-                editor = shref.edit();
-                editor.remove(key).commit();
-                editor.putString(key, json);
-                editor.commit();
-
-                MyShoppingListAdapter adapter = new MyShoppingListAdapter(myContext, itemList);
-                recyclerView.setAdapter(adapter);
-            }
-        });
+//        myShoppingListViewHolder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    ListItem listItem1 = itemList.get(position);
+//                    itemList.remove(position);
+//                    listItem1.setStatus(true);
+//                    itemList.add(listItem1);
+//
+//                } else {
+//                    ListItem listItem1 = itemList.get(position);
+//                    itemList.remove(position);
+//
+//                    listItem1.setStatus(false);
+//                    itemList.add(0, listItem1);
+//                }
+//
+//                Gson gson = new Gson();
+//                String json = gson.toJson(itemList);
+//
+//                editor = shref.edit();
+//                editor.remove(key).commit();
+//                editor.putString(key, json);
+//                editor.commit();
+//
+//                MyShoppingListAdapter adapter = new MyShoppingListAdapter(myContext, itemList);
+//                recyclerView.setAdapter(adapter);
+//            }
+//        });
 
         myShoppingListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,7 +206,7 @@ public class MyShoppingListAdapter extends RecyclerView.Adapter<MyShoppingListAd
 
         TextView mItemName, mItemCount, itemPrice, itemLocation;
         ImageView deleteItem, addItemButton, removeItemButton;
-        CheckBox checkBox;
+        //CheckBox checkBox;
 
 
         public MyShoppingListViewHolder(@NonNull final View itemView) {
@@ -214,7 +214,7 @@ public class MyShoppingListAdapter extends RecyclerView.Adapter<MyShoppingListAd
             mItemName = itemView.findViewById(R.id.itemName);
             mItemCount = itemView.findViewById(R.id.count_text_cf);
             deleteItem = itemView.findViewById(R.id.deleteBtn);
-            checkBox = itemView.findViewById(R.id.checkBox);
+            //checkBox = itemView.findViewById(R.id.checkBox);
             itemPrice = itemView.findViewById(R.id.item_price_cf);
             itemLocation = itemView.findViewById(R.id.shelf_no_cf);
             addItemButton = itemView.findViewById(R.id.add_item_cf);

@@ -27,12 +27,11 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="5dp"
                 android:text="Falcon Heavy"
-                android:textStyle="bold"
                 android:fontFamily="@font/notosans"
-                android:paddingLeft="8dp"
+                android:layout_marginLeft="12dp"
                 android:paddingRight="8dp"
                 android:paddingTop="8dp"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="#000"/>
 
             <TextView
@@ -41,7 +40,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rs.1149"
-                android:background="@drawable/my_button_bg"
                 android:textStyle="bold"
                 android:layout_marginRight="12dp"
                 android:fontFamily="@font/opensans"
@@ -50,18 +48,18 @@
                 android:paddingRight="12dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:textSize="16sp"
-                android:textColor="#fff"/>
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
 
-            <View
-                android:layout_toLeftOf="@id/shelf_no_cf"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="18dp"
-                android:layout_marginLeft="12dp"
-                android:layout_below="@+id/itemName"
-                android:background="#a6a6a6"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"/>
+<!--            <View-->
+<!--                android:layout_toLeftOf="@id/shelf_no_cf"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="18dp"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:layout_below="@+id/itemName"-->
+<!--                android:background="#a6a6a6"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="1dp"/>-->
 
             <TextView
                 android:id="@+id/shelf_no_cf"
@@ -69,27 +67,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
-                android:layout_centerHorizontal="true"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
-                android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:fontFamily="@font/notosans"
-                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/opensans"
+                android:textSize="14sp"
                 android:text="Floor 2, Shelf-21B"/>
 
-            <View
-                android:layout_toRightOf="@id/shelf_no_cf"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="18dp"
-                android:layout_marginRight="12dp"
-                android:layout_below="@+id/itemName"
-                android:background="#a6a6a6"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"/>
+<!--            <View-->
+<!--                android:layout_toRightOf="@id/shelf_no_cf"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="18dp"-->
+<!--                android:layout_marginRight="12dp"-->
+<!--                android:layout_below="@+id/itemName"-->
+<!--                android:background="#a6a6a6"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="1dp"/>-->
 
             <ImageView
                 android:id="@+id/remove_item_cf"
+                android:paddingLeft="12dp"
                 android:padding="8dp"
                 android:tint="@color/pshyGreen"
                 android:src="@drawable/ic_remove_circle_black_24dp"
@@ -121,22 +119,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:layout_below="@+id/shelf_no_cf"
-                android:id="@+id/checkBox"
-                android:layout_toLeftOf="@id/deleteBtn"
-                android:layout_width="wrap_content"
-                android:padding="8dp"
-                android:layout_centerVertical="true"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:button="@drawable/ic_check_box_black_24dp" />
+<!--            <CheckBox-->
+<!--                android:layout_below="@+id/shelf_no_cf"-->
+<!--                android:id="@+id/checkBox"-->
+<!--                android:layout_toLeftOf="@id/deleteBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:padding="8dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:button="@drawable/ic_check_box_black_24dp" />-->
 
             <ImageView
                 android:layout_below="@+id/shelf_no_cf"
                 android:id="@+id/deleteBtn"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_centerVertical="true"
