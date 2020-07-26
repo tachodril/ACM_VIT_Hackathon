@@ -64,7 +64,7 @@ public class StartShoppingFragment extends Fragment implements OnMapReadyCallbac
         Bitmap smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
 
         LatLng sydney = new LatLng(28.567892, 77.323089);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Lowe's India")
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Retail Store")
                 .icon(BitmapDescriptorFactory.fromBitmap(smallMarker)));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoomLevel));

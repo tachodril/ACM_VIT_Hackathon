@@ -34,7 +34,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:src="@drawable/lowes_logo"></ImageView>
+            android:src="@drawable/store"></ImageView>
 
         <TextView
             android:layout_width="match_parent"
