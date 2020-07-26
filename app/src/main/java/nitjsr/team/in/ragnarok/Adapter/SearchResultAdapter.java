@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import nitjsr.team.in.ragnarok.Activity.SearchResultsActivity;
+import nitjsr.team.in.ragnarok.Activity.MainActivity;
 import nitjsr.team.in.ragnarok.Modals.ItemModal;
 import nitjsr.team.in.ragnarok.Modals.ListItem;
 import nitjsr.team.in.ragnarok.R;
@@ -34,9 +35,9 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
 
     private Context context;
     private ArrayList<ItemModal> data;
-    private SearchResultsActivity currentActivity;
+    private FragmentActivity currentActivity;
 
-    public SearchResultAdapter(Context context1, ArrayList<ItemModal> currentList, SearchResultsActivity searchResultsActivity) {
+    public SearchResultAdapter(Context context1, ArrayList<ItemModal> currentList, FragmentActivity searchResultsActivity) {
         this.context = context1;
         this.data = currentList;
         this.currentActivity = searchResultsActivity;
