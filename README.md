@@ -26,8 +26,8 @@ We have built a Mobile Application which will help big retail stores to enable t
 ## Installation Instructions:
 
 ### 1. Using APK (Preferred)
-  *  Download the apk file from [here](https://github.com/prince11sysop/Lowes-Product-Finder/releases/tag/v1.0).
-  * Copy the apk named “ ACM_VIT_Hackathon ” in your Android device
+  *  Download the apk file from [here](https://github.com/tachodril/ACM_VIT_Hackathon/releases/tag/V1.0.0).
+  * Copy the apk named “ shoppers_app.apk ” in your Android device
   * Install the apk (Please allow if asked for any permission)
   * Open the app
 
