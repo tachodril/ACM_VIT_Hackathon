@@ -9,7 +9,7 @@
 We have built a Mobile Application which will help big retail stores to enable their customers to easily find products in their store and optimize their overall shopping experience. User have to create a shopping list from the app and the app will provide the shortest paths.
 
 ## App Demo - Video Link: 
-* Click [here](https://youtu.be/n3ThaosmvGw). to view the demonstration video of this app.
+* Click [here](https://youtu.be/n3ThaosmvGw) to view the demonstration video of this app.
 
 ## Installation Instructions:
 
