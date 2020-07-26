@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#99000000">
+        android:background="#B3000000">
 
         <TextView
             android:id="@+id/intro"
@@ -34,9 +34,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="After creating the shopping list. Click on Start Shopping button to Proceed."
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:fontFamily="@font/notosans"
-            android:textColor="@color/grey"
+            android:textColor="@color/white"
             android:padding="8dp"
             android:layout_margin="10dp"
             android:layout_below="@id/intro"
