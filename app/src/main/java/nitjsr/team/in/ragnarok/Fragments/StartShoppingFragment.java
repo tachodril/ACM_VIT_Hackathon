@@ -18,6 +18,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -28,6 +30,7 @@ public class StartShoppingFragment extends Fragment implements OnMapReadyCallbac
 
     private GoogleMap mMap;
     Button startShopping;
+    DatabaseReference databaseReference;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_start_shopping, container, false);
@@ -38,10 +41,17 @@ public class StartShoppingFragment extends Fragment implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
         startShopping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), StoreMapActivity.class));
+
+                String childKey = databaseReference.push().getKey();
+                databaseReference.child(childKey).setValue("Prince");
+                Toast.makeText(getContext(), ""+childKey, Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(getContext(), StoreMapActivity.class));
             }
         });
 
