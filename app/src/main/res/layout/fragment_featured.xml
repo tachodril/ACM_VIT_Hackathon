@@ -92,7 +92,7 @@
             android:layout_marginTop="25dp"
             android:alpha="0.5"
             android:fontFamily="@font/notosans"
-            android:text="Featured Websites"
+            android:text="Featured Retail Websites"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -127,7 +127,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/appliances" />
+                        android:src="@drawable/reliance" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/notosans"
-                        android:text="Appliances"
+                        android:text="Reliance Ltd."
                         android:textAlignment="center"
                         android:textSize="13sp"
                         android:textStyle="bold" />
@@ -162,7 +162,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/bath" />
+                        android:src="@drawable/big_bazaar" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -170,7 +170,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/notosans"
-                        android:text="Bath"
+                        android:text="Big Bazaar"
                         android:textAlignment="center"
                         android:textSize="13sp"
                         android:textStyle="bold" />
@@ -197,7 +197,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/lighting" />
+                        android:src="@drawable/vmart" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -205,7 +205,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/notosans"
-                        android:text="Lighting and Fans"
+                        android:text="V Mart"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textSize="13sp"
@@ -242,7 +242,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/tools" />
+                        android:src="@drawable/walmart" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -250,9 +250,8 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/notosans"
-                        android:text="Tools"
+                        android:text="Walmart"
                         android:textAlignment="center"
-                        android:textAllCaps="true"
                         android:textSize="13sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -278,7 +277,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/flooring" />
+                        android:src="@drawable/pantaloons" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -286,7 +285,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/notosans"
-                        android:text="Flooring"
+                        android:text="Pantaloons"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textSize="13sp"
@@ -314,7 +313,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/outdoor" />
+                        android:src="@drawable/westside" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -322,7 +321,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/notosans"
-                        android:text="Outdoor Power Equipment"
+                        android:text="Westside"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textSize="13sp"
