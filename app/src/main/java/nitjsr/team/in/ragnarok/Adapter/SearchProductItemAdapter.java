@@ -30,7 +30,7 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
     public SearchProductItemAdapter(SearchItemActivity searchItemActivity, Context context, ArrayList<ItemModal> data) {
         this.context = context;
         this.data = data;
-        this.searchItemActivity=searchItemActivity;
+        this.searchItemActivity = searchItemActivity;
     }
 
     @NonNull
@@ -123,8 +123,8 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
 //                intent.putExtra("type", finalType);
 //                intent.putExtra("key", finalKey);
 //                context.startActivity(intent);
-                AppConstants.type=finalType;
-                AppConstants.key=finalKey;
+                AppConstants.type = finalType;
+                AppConstants.key = finalKey;
                 searchItemActivity.finish();
                 //AppConstants.mSearchProductActivity.finish();
             }
