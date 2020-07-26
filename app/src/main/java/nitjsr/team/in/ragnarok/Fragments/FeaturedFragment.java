@@ -30,10 +30,10 @@ public class FeaturedFragment extends Fragment {
     TabLayout indicator;
     List<Integer> sliderImages;
     List<String> sliderText;
-    String sliderText1 = "Hi";
-    String sliderText2 = "This";
-    String sliderText4 = "is";
-    String sliderText5 = "Me";
+    String sliderText1 = "";
+    String sliderText2 = "";
+    String sliderText4 = "";
+    String sliderText5 = "";
 
     LinearLayout mItemFinder, mShoppingList, mPriceChecker;
     RelativeLayout mCaptureShoppingList;
@@ -137,8 +137,8 @@ public class FeaturedFragment extends Fragment {
 
         sliderImages = new ArrayList<Integer>();
         sliderImages.add(R.drawable.image_1);
-        sliderImages.add(R.drawable.paint);
-        sliderImages.add(R.drawable.image_5);
+        sliderImages.add(R.drawable.big_w);
+        sliderImages.add(R.drawable.walmart_img);
         sliderImages.add(R.drawable.smart_home);
 
 

@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.nav_homed:
-                        startActivity(new Intent(MainActivity.this, MainActivity.class));
-                        finish();
+//                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+//                        finish();
                         dl.close();
                         break;
 //                    case R.id.nav_galleryd:
@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
 //                        break;
                     case R.id.nav_slideshowd:
                         startActivity(new Intent(MainActivity.this, AboutActivity.class));
-                        finish();
                         dl.close();
                         break;
                     default:

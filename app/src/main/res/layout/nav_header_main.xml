@@ -14,7 +14,7 @@
         android:scaleType="centerCrop"
         android:contentDescription="Navigation Header"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/lowes" />
+        app:srcCompat="@drawable/paint" />
 <!--    <TextView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:background="#80000000"-->

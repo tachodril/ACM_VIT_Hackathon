@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
+import nitjsr.team.in.ragnarok.Activity.StoreMapActivity;
 import nitjsr.team.in.ragnarok.Adapter.MyShoppingListAdapter;
 import nitjsr.team.in.ragnarok.Modals.ItemModal;
 import nitjsr.team.in.ragnarok.Modals.ListItem;
@@ -261,6 +262,7 @@ public class ShoppingListFragment extends Fragment {
                     alertDialog.show();
                     return true;
                 } else if (actionItem.getId() == R.id.item3) {
+                        startActivity(new Intent(getActivity(), StoreMapActivity.class));
                     // switch to tab 5
                 }
                 return false;
