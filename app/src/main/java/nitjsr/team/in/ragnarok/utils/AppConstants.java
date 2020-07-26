@@ -34,7 +34,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
-import nitjsr.team.in.ragnarok.Activity.SearchResultsActivity;
 import nitjsr.team.in.ragnarok.Adapter.MyShoppingListAdapter;
 import nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment;
 import nitjsr.team.in.ragnarok.Modals.ItemModal;
@@ -47,12 +46,13 @@ import static nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment.recyclerVie
 public class AppConstants {
     public static ArrayList<ItemModal> mItemList = new ArrayList<>();
     public static SearchItemActivity mSearchProductActivity;
-    public static SearchResultsActivity mSearchResultsActivity;
+    public static FragmentActivity mSearchResultsActivity;
     public static FragmentActivity mCreateShoppingListActivity;
     public static boolean isCreateShoppingListActivityOpen = false;
     public static String searchKeyWord = "";
     public static String listFromScan = "";
     public static String curFloor = "0", curShelf = "0";
+    public static String type="-1", key="-1";
 
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivityManager

@@ -5,52 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <EditText
-        android:textSize="18sp"
-        android:layout_centerInParent="true"
-        android:id="@+id/search_input"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:editable="false"
-        android:background="@null"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:hint="Click 2 times...here"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
     <RelativeLayout
-        android:id="@+id/search_bar2"
+        android:id="@+id/search_bar"
         android:layout_width="match_parent"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_alignParentTop="true"
+        <TextView
+            android:id="@+id/search_text"
+            android:text="Search a product"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="50dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/notosans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:src="@drawable/ic_baseline_search_24"
+            android:layout_marginRight="30dp"
+            android:layout_above="@+id/temp_view"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/temp_view"
+            android:layout_below="@+id/search_text"
+            android:background="@color/grey"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
-            android:id="@+id/search_input2"
-            android:hint="Search a product"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:id="@+id/search_text"
-                android:textSize="18sp"
-                android:focusable="false"
-                android:clickable="true"
-                android:textColor="#000"
-                android:editable="false"
-                android:background="@null"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="1dp"/>
     </RelativeLayout>
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/search_results_list"-->
-<!--        android:layout_marginTop="18dp"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_below="@+id/search_input"-->
-<!--        android:layout_height="wrap_content"/>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_results_list"
+        android:layout_marginTop="28dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/search_bar"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

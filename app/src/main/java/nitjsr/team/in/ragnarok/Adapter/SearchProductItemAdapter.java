@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import nitjsr.team.in.ragnarok.Activity.SearchResultsActivity;
+import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
 import nitjsr.team.in.ragnarok.Modals.ItemModal;
 import nitjsr.team.in.ragnarok.R;
 import nitjsr.team.in.ragnarok.utils.AppConstants;
@@ -24,11 +24,13 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
     private Context context;
     private ArrayList<ItemModal> data;
     private String keyWord;
+    private SearchItemActivity searchItemActivity;
     public HashMap<String, String> subCatMap = new HashMap<>(), catMap = new HashMap<>(), nameMap = new HashMap<>();
 
-    public SearchProductItemAdapter(Context context, ArrayList<ItemModal> data) {
+    public SearchProductItemAdapter(SearchItemActivity searchItemActivity, Context context, ArrayList<ItemModal> data) {
         this.context = context;
         this.data = data;
+        this.searchItemActivity=searchItemActivity;
     }
 
     @NonNull
@@ -41,7 +43,7 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, final int position) {
 
-        String type = "", key = "";
+        String ltype = "", lkey = "";
 
         ItemModal currentItem = data.get(position);
         keyWord = AppConstants.searchKeyWord;
@@ -58,8 +60,8 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
                     nameMap.put(currentItem.getName(), "true");
                     holder.name.setText(currentItem.getName());
                     holder.inText.setText("in " + currentItem.getSubCategory());
-                    type = "name";
-                    key = currentItem.getName();
+                    ltype = "name";
+                    lkey = currentItem.getName();
                 }
                 break;
             } else if (currentItem.getDescription().toLowerCase().contains(keyWords[i].toLowerCase())) {
@@ -72,8 +74,8 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
                     nameMap.put(currentItem.getName(), "true");
                     holder.name.setText(currentItem.getName());
                     holder.inText.setText("in " + currentItem.getSubCategory());
-                    type = "name";
-                    key = currentItem.getName();
+                    ltype = "name";
+                    lkey = currentItem.getName();
                 }
                 break;
             }
@@ -88,8 +90,8 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
                     subCatMap.put(currentItem.getSubCategory(), "true");
                     holder.name.setText(currentItem.getSubCategory());
                     holder.inText.setText("in " + currentItem.getCategory());
-                    type = "subcat";
-                    key = currentItem.getSubCategory();
+                    ltype = "subcat";
+                    lkey = currentItem.getSubCategory();
                 }
                 break;
             }
@@ -104,24 +106,27 @@ public class SearchProductItemAdapter extends RecyclerView.Adapter<SearchProduct
                     catMap.put(currentItem.getCategory(), "true");
                     holder.name.setText(currentItem.getCategory());
                     holder.inText.setVisibility(View.GONE);
-                    type = "cat";
-                    key = currentItem.getCategory();
+                    ltype = "cat";
+                    lkey = currentItem.getCategory();
                 }
                 break;
             }
         }
 
 
-        final String finalType = type;
-        final String finalKey = key;
+        final String finalType = ltype;
+        final String finalKey = lkey;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, SearchResultsActivity.class);
-                intent.putExtra("type", finalType);
-                intent.putExtra("key", finalKey);
-                context.startActivity(intent);
-                AppConstants.mSearchProductActivity.finish();
+//                Intent intent = new Intent(context, SearchResultsActivity.class);
+//                intent.putExtra("type", finalType);
+//                intent.putExtra("key", finalKey);
+//                context.startActivity(intent);
+                AppConstants.type=finalType;
+                AppConstants.key=finalKey;
+                searchItemActivity.finish();
+                //AppConstants.mSearchProductActivity.finish();
             }
         });
     }
