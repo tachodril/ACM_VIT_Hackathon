@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,21 +34,30 @@ public class SearchFragment extends Fragment {
     private SearchResultAdapter mAdapter;
     private ArrayList<ItemModal> currentList;
     private String type, key;
+    private TextView searchText;
 
     @Override
     public void onResume() {
         super.onResume();
         AppConstants.mSearchResultsActivity = getActivity();
+        if (!AppConstants.key.equals("-1")) {
+            searchText.setText(AppConstants.key);
+        }
+        type = AppConstants.type;
+        key = AppConstants.key;
+        setUpRecyclerView();
+        Log.e("onResume: ", "set up rv called..." + AppConstants.type);
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_search, container, false);
 
-        type=AppConstants.type;
-        key=AppConstants.key;
+        type = AppConstants.type;
+        key = AppConstants.key;
         init(root);
         receiveClicks();
-        setUpRecyclerView();
+        //setUpRecyclerView();
+        Log.e("onResCreate view", type + " hghg " + key);
 
         return root;
     }
@@ -61,7 +71,8 @@ public class SearchFragment extends Fragment {
 
     private void filterDataList() {
 
-        if(type=="-1") return;
+        if (type.equals("-1")) return;
+        currentList.clear();
 
         if (type.equals("name")) {
             Log.e("filterDataList: ", "name");
@@ -107,7 +118,8 @@ public class SearchFragment extends Fragment {
 
     private void init(View root) {
         searchBar = root.findViewById(R.id.search_bar);
-        searchResultsList=root.findViewById(R.id.search_results_list);
-        currentList=new ArrayList<>();
+        searchResultsList = root.findViewById(R.id.search_results_list);
+        searchText = root.findViewById(R.id.search_text);
+        currentList = new ArrayList<>();
     }
 }
