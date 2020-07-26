@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        openDrawerBtn=findViewById(R.id.drawer_open_btn);
+        openDrawerBtn = findViewById(R.id.drawer_open_btn);
 
         getSupportActionBar().hide();
 
@@ -54,34 +54,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpDrawer() {
-        dl = (DrawerLayout)findViewById(R.id.activity_main);
-        t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
+        dl = (DrawerLayout) findViewById(R.id.activity_main);
+        t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
 
         dl.addDrawerListener(t);
         t.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nv = (NavigationView)findViewById(R.id.nv);
+        nv = (NavigationView) findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                switch(id)
-                {
+                switch (id) {
                     case R.id.nav_homed:
-//                        startActivity(new Intent(MainActivity.this,MainActivity.class));
-//                        finish();
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        finish();
                         dl.close();
                         break;
-                    case R.id.nav_galleryd:
-//                        startActivity(new Intent(MainActivity.this,MainActivity.class));
-//                        finish();
-                        dl.close();
-                        break;
+//                    case R.id.nav_galleryd:
+////                        startActivity(new Intent(MainActivity.this,MainActivity.class));
+////                        finish();
+//                        dl.close();
+//                        break;
                     case R.id.nav_slideshowd:
-//                        startActivity(new Intent(MainActivity.this,MainActivity.class));
-//                        finish();
+                        startActivity(new Intent(MainActivity.this, AboutActivity.class));
+                        finish();
                         dl.close();
                         break;
                     default:

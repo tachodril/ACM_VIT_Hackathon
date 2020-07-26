@@ -21,9 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.SearchItemActivity"></activity>
-        <activity android:name=".Activity.SearchResultsActivity"></activity>
-
+        <activity android:name=".Activity.AboutActivity" />
+        <activity android:name=".Activity.SearchItemActivity" />
+        <activity android:name=".Activity.SearchResultsActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -35,7 +35,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="ocr,model2,model3" />
@@ -49,15 +48,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.WebViewActivity"/>
-        <activity android:name=".Activity.StoreMapActivity"/>
+        <activity android:name=".Activity.WebViewActivity" />
+        <activity android:name=".Activity.StoreMapActivity" />
 
         <provider
             android:name=".utils.MyFileContentProvider"
             android:authorities="nitjsr.team.in.ragnarok"
             android:enabled="true"
             android:exported="true" />
-
     </application>
 
 </manifest>
