@@ -26,6 +26,9 @@ import nitjsr.team.in.ragnarok.Modals.ListItem;
 import nitjsr.team.in.ragnarok.R;
 import nitjsr.team.in.ragnarok.utils.AppConstants;
 
+import static nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment.itemList;
+import static nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment.recyclerView;
+
 public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapter.Lviewholder> {
 
     private Context context;
@@ -65,81 +68,73 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
             }
         });
 
-//        holder.addButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ItemModal itemModal = data.get(position);
-//
-//                SharedPreferences sharedPreferences = AppConstants.mSearchProductActivity
-//                        .getSharedPreferences("SharedPref", Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPreferences.edit();
-//
-//
-//                ArrayList<ListItem> myList = new ArrayList<>();
-//
-//
-//                //fetch older item list
-//                Gson gson = new Gson();
-//                String response = sharedPreferences.getString("ItemList", "");
-//
-//                if (gson.fromJson(response, new TypeToken<List<ListItem>>() {
-//                }.getType()) != null)
-//                    myList = gson.fromJson(response, new TypeToken<List<ListItem>>() {
-//                    }.getType());
-//                else
-//                    myList = new ArrayList<>();
-//
-//                boolean ifAlreadyInList = false;
-//                //check if this item is already in the list
-//                for (ListItem li : myList) {
-//                    if (li.getName().equalsIgnoreCase(itemModal.getName())
-//                            && li.getDescription().equalsIgnoreCase(itemModal.getDescription())) {
-//                        li.setItemCount(li.getItemCount() + 1);
-//                        ifAlreadyInList = true;
-//                    }
-//                }
-//
-//                //add to item list
-//                if (!ifAlreadyInList) {
-//                    myList.add(new ListItem(
-//                            itemModal.getCategory(),
-//                            itemModal.getSubCategory(),
-//                            itemModal.getPrice(),
-//                            itemModal.getFloor(),
-//                            itemModal.getShelf(),
-//                            itemModal.getDescription(),
-//                            itemModal.getName(),
-//                            1, false
-//                    ));
-//                }
-//                Collections.reverse(myList);
-//                myList = AppConstants.sortItemList(myList);
-//                itemList = myList;
-//
-//                Gson gson2 = new Gson();
-//                String json = gson2.toJson(myList);
-//
-//                editor = sharedPreferences.edit();
-//                editor.remove("ItemList").commit();
-//                editor.putString("ItemList", json);
-//                editor.commit();
-//
-//                currentActivity.finish();
-//                //AppConstants.searchKeyWord="";
-//
-//                if (AppConstants.isCreateShoppingListActivityOpen) {
-//                    //AppConstants.mCreateShoppingListActivity.adapter.notifyDataSetChanged();
-//
-//                    //myList=AppConstants.sortItemList(myList);
-//                    AppConstants.mCreateShoppingListActivity.recyclerView
-//                            .setAdapter(new MyShoppingListAdapter(
-//                                    context, myList
-//                            ));
-//                } else {
-//                    context.startActivity(new Intent(context, CreateShoppingListActivity.class));
-//                }
-//            }
-//        });
+        holder.addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ItemModal itemModal = data.get(position);
+
+                SharedPreferences sharedPreferences = AppConstants.mSearchProductActivity
+                        .getSharedPreferences("SharedPref", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
+                ArrayList<ListItem> myList = new ArrayList<>();
+
+
+                //fetch older item list
+                Gson gson = new Gson();
+                String response = sharedPreferences.getString("ItemList", "");
+
+                if (gson.fromJson(response, new TypeToken<List<ListItem>>() {
+                }.getType()) != null)
+                    myList = gson.fromJson(response, new TypeToken<List<ListItem>>() {
+                    }.getType());
+                else
+                    myList = new ArrayList<>();
+
+                boolean ifAlreadyInList = false;
+                //check if this item is already in the list
+                for (ListItem li : myList) {
+                    if (li.getName().equalsIgnoreCase(itemModal.getName())
+                            && li.getDescription().equalsIgnoreCase(itemModal.getDescription())) {
+                        li.setItemCount(li.getItemCount() + 1);
+                        ifAlreadyInList = true;
+                    }
+                }
+
+                //add to item list
+                if (!ifAlreadyInList) {
+                    myList.add(new ListItem(
+                            itemModal.getCategory(),
+                            itemModal.getSubCategory(),
+                            itemModal.getPrice(),
+                            itemModal.getFloor(),
+                            itemModal.getShelf(),
+                            itemModal.getDescription(),
+                            itemModal.getName(),
+                            1, false
+                    ));
+                }
+                Collections.reverse(myList);
+                myList = AppConstants.sortItemList(myList);
+                itemList = myList;
+
+                Gson gson2 = new Gson();
+                String json = gson2.toJson(myList);
+
+                editor = sharedPreferences.edit();
+                editor.remove("ItemList").commit();
+                editor.putString("ItemList", json);
+                editor.commit();
+
+                //currentActivity.finish();
+                //AppConstants.searchKeyWord="";
+//                AppConstants.mCreateShoppingListActivity.recyclerView
+//                        .setAdapter(new MyShoppingListAdapter(
+//                                context, myList
+//                        ));
+            }
+        });
     }
 
     @Override

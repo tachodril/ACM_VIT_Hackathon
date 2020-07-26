@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -23,6 +25,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.leinardi.android.speeddial.SpeedDialActionItem;
+import com.leinardi.android.speeddial.SpeedDialView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +53,9 @@ public class ShoppingListFragment extends Fragment {
     private boolean firstTimeFlag = true;
 
     private ProgressDialog progressDialog;
-    private ImageView backButton, clearListButton, overFlowMenuButton;
+    private ImageView clearListButton, overFlowMenuButton;
+
+    private SpeedDialView sv_fab;
 
     @Override
     public void onResume() {
@@ -70,11 +76,39 @@ public class ShoppingListFragment extends Fragment {
 
         //Adding list in local storage
         fetchItemList();
+        setUpFabItems();
 
         receiveClicks();
         setUpRecyclerView();
 
         return root;
+    }
+
+    private void setUpFabItems() {
+        sv_fab.addActionItem(new SpeedDialActionItem.Builder(R.id.item1, getResources().getDrawable(R.drawable.ic_baseline_add_24))
+                .setFabBackgroundColor(Color.WHITE)
+                .setFabImageTintColor(Color.BLACK)
+                .setLabel("Add items")
+                .setLabelColor(Color.BLACK)
+                .setLabelBackgroundColor(Color.WHITE)
+                .setLabelClickable(true)
+                .create());
+        sv_fab.addActionItem(new SpeedDialActionItem.Builder(R.id.item2, getResources().getDrawable(R.drawable.ic_clear_all_black_24dp))
+                .setFabBackgroundColor(Color.WHITE)
+                .setFabImageTintColor(Color.BLACK)
+                .setLabel("Clear list")
+                .setLabelColor(Color.BLACK)
+                .setLabelBackgroundColor(Color.WHITE)
+                .setLabelClickable(true)
+                .create());
+        sv_fab.addActionItem(new SpeedDialActionItem.Builder(R.id.item3, getResources().getDrawable(R.drawable.ic_shopping_cart_black_24dp))
+                .setFabBackgroundColor(Color.WHITE)
+                .setFabImageTintColor(Color.BLACK)
+                .setLabel("Start shopping")
+                .setLabelColor(Color.BLACK)
+                .setLabelBackgroundColor(Color.WHITE)
+                .setLabelClickable(true)
+                .create());
     }
 
     private void setUpRecyclerView() {
@@ -93,16 +127,12 @@ public class ShoppingListFragment extends Fragment {
     }
 
     private void init(View root) {
-        overFlowMenuButton = root.findViewById(R.id.overflow_menu_crl);
-        backButton = root.findViewById(R.id.back_button_crl);
-        clearListButton = root.findViewById(R.id.clear_my_list);
-
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setTitle("Please Wait");
         progressDialog.setMessage("Fetching shopping list...");
         progressDialog.setCancelable(false);
 
-        fab = (FloatingActionButton) root.findViewById(R.id.fab);
+        sv_fab=root.findViewById(R.id.speedDial);
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
     }
 
@@ -172,85 +202,72 @@ public class ShoppingListFragment extends Fragment {
 
     private void receiveClicks() {
 
-        overFlowMenuButton.setOnClickListener(new View.OnClickListener() {
+        sv_fab.setOnActionSelectedListener(new SpeedDialView.OnActionSelectedListener() {
             @Override
-            public void onClick(View v) {
-
-                //startActivity(new Intent(getActivity(), StoreMapActivity.class));
-            }
-        });
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (AppConstants.mItemList.size() == 0) {
-                    if (AppConstants.isNetworkAvailable(getActivity())) {
-                        AppConstants.fetchGoodsItemList(getActivity());
-                    } else {
-                        Toast.makeText(getActivity(), "Please make sure you have a secure internet connection.", Toast.LENGTH_SHORT).show();
+            public boolean onActionSelected(SpeedDialActionItem actionItem) {
+                if(actionItem.getId()==R.id.item1){
+                    if (AppConstants.mItemList.size() == 0) {
+                        if (AppConstants.isNetworkAvailable(getActivity())) {
+                            AppConstants.fetchGoodsItemList(getActivity());
+                        } else {
+                            Toast.makeText(getActivity(), "Please make sure you have a secure internet connection.", Toast.LENGTH_SHORT).show();
+                        }
+                        return true;
                     }
-                    return;
+
+                    startActivity(new Intent(getActivity(), SearchItemActivity.class));
+                    return true;
                 }
+                else if(actionItem.getId()==R.id.item2){
+                    shref = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
+                    Gson gson = new Gson();
+                    String response = shref.getString(key, "");
 
-                startActivity(new Intent(getActivity(), SearchItemActivity.class));
-            }
-        });
+                    if (gson.fromJson(response, new TypeToken<List<ListItem>>() {
+                    }.getType()) != null)
+                        itemList = gson.fromJson(response, new TypeToken<List<ListItem>>() {
+                        }.getType());
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //finish();
-            }
-        });
+                    if (itemList.size() == 0) {
+                        Toast.makeText(getActivity(), "Item List is Empty...", Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
 
-        clearListButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                    alertDialog.setTitle("Clear Shopping List");
+                    alertDialog.setMessage("Are you sure you want to clear your list?");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
 
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "CLEAR",
+                            new DialogInterface.OnClickListener() {
 
-                shref = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
-                Gson gson = new Gson();
-                String response = shref.getString(key, "");
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
 
-                if (gson.fromJson(response, new TypeToken<List<ListItem>>() {
-                }.getType()) != null)
-                    itemList = gson.fromJson(response, new TypeToken<List<ListItem>>() {
-                    }.getType());
+                                    shref = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
+                                    editor = shref.edit();
+                                    editor.remove("ItemList").commit();
+                                    itemList.clear();
+                                    adapter = new MyShoppingListAdapter(getActivity(), itemList);
+                                    recyclerView.setAdapter(adapter);
 
-                if (itemList.size() == 0) {
-                    Toast.makeText(getActivity(), "Item List is Empty...", Toast.LENGTH_SHORT).show();
-                    return;
+                                }
+                            });
+                    alertDialog.show();
+                    return true;
                 }
-
-                AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
-                alertDialog.setTitle("Clear Shopping List");
-                alertDialog.setMessage("Are you sure you want to clear your list?");
-                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "CLEAR",
-                        new DialogInterface.OnClickListener() {
-
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-
-                                shref = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
-                                editor = shref.edit();
-                                editor.remove("ItemList").commit();
-                                itemList.clear();
-                                adapter = new MyShoppingListAdapter(getActivity(), itemList);
-                                recyclerView.setAdapter(adapter);
-
-                            }
-                        });
-                alertDialog.show();
+                else if(actionItem.getId()==R.id.item3){
+                    // switch to tab 5
+                }
+                return false;
             }
         });
+
     }
 
 }
