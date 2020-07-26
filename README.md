@@ -8,20 +8,8 @@
 ## Theme:
 We have built a Mobile Application which will help big retail stores to enable their customers to easily find products in their store and optimize their overall shopping experience. User have to create a shopping list from the app and the app will provide the shortest paths.
 
-## App Features:
-### Stated in problem statement
-* Implemented a Bottom Navigation Bar
-* Made use of dependency injection
-* Implemented local caching using database
-
-### Other prominent features
-* Search a product using its name or category
-* Add search results to custom shopping list
-* Scan a handwritten list and extract items to list
-* Voice navigation for shopping
-* Indoor Map system of the store
-* Smartly sorted list according to their location, weight and size
-
+## App Demo - Video Link: 
+* Click [here](https://youtu.be/n3ThaosmvGw). to view the demonstration video of this app.
 
 ## Installation Instructions:
 
@@ -36,7 +24,23 @@ We have built a Mobile Application which will help big retail stores to enable t
   * Build the Gradle
   * Click on the “Run” button to run the app on your device or on the emulator.
 
-  
+
+## App Features:
+
+### Stated in problem statement
+* Implemented a Bottom Navigation Bar
+* Made use of dependency injection
+* Implemented local caching using database
+
+### Other prominent features
+* Search a product using its name or category
+* Add search results to custom shopping list
+* Scan a handwritten list and extract items to list
+* Voice navigation for shopping
+* Indoor Map system of the store
+* Smartly sorted list according to their location, weight and size
+
+
 ## Tech Stack:
 
 ### Technologies:
@@ -50,6 +54,7 @@ We have built a Mobile Application which will help big retail stores to enable t
 * Firebase ML Kit
 * Firebase Database
 * Git & GitHub
+* Lottie
 
 ## Challenges faced:
 * We decided to cache the scanned image using thumbnails, but it was giving bad image quality for ML Vision processing. So, we stored the image in the local storage instead of using the image's thumbnails.
@@ -62,8 +67,7 @@ We have successfully integrated all 3 requirements of the problem statements -
 * We have heavily used Dependency Injection in various parts of the project (eg - passing contexts, adapters, activity instances, etc. into constructors of static methods. The best implementation of the same is in modal classes).
 * We have used local caching in database in many features. Users shopping list is saved in cache using shared preferences, scanned images are stored in local storage of the device and once viewed web pages (in featured websites tab) are saved in local cache.
 
-## How to use - Video Link: 
-* Click here to view the demonstration video of this app.
+
 
 ## Screenshots:
 <img src="https://github.com/tachodril/ACM_VIT_Hackathon/blob/master/Screenshots/FeaturedWebsitesTab.jpg" width="200" height="400">
