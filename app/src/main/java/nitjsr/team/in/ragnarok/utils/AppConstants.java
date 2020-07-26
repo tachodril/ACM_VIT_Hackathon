@@ -52,7 +52,7 @@ public class AppConstants {
     public static String searchKeyWord = "";
     public static String listFromScan = "";
     public static String curFloor = "0", curShelf = "0";
-    public static String type="-1", key="-1";
+    public static String type = "-1", key = "-1";
 
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivityManager
@@ -165,8 +165,7 @@ public class AppConstants {
             Window window = AppConstants.mSearchResultsActivity.getWindow();
             window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
             viewGroup = AppConstants.mSearchResultsActivity.findViewById(android.R.id.content);
-        }
-        else {
+        } else {
             Window window = AppConstants.mCreateShoppingListActivity.getWindow();
             window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
             viewGroup = AppConstants.mCreateShoppingListActivity.findViewById(android.R.id.content);

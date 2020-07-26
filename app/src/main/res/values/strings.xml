@@ -5,4 +5,6 @@
     <string name="title_scan_list">Scan List</string>
     <string name="title_start_shopping">Start Shopping</string>
     <string name="title_featured">Featured Websites</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
 </resources>
