@@ -26,23 +26,23 @@ public class WebViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
 
         webView=(WebView)findViewById(R.id.webView);
-        toolbarTitle=(TextView)findViewById(R.id.toolbar_title);
+//        toolbarTitle=(TextView)findViewById(R.id.toolbar_title);
 
 //        webView.setWebViewClient(new MyWebViewClient());
 
         Intent i = getIntent();
         String url= i.getStringExtra("url");
         String title=i.getStringExtra("title");
-        toolbarTitle.setText(title);
+//        toolbarTitle.setText(title);
 
         if (AppConstants.isNetworkAvailable(getApplicationContext())) {
             // Internet Connection is Present

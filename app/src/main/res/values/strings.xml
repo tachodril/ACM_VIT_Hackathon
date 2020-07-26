@@ -7,4 +7,9 @@
     <string name="title_featured">Featured Websites</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip"></string>
+    <string name="start">GOT IT</string>
 </resources>

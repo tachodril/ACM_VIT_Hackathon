@@ -30,7 +30,6 @@ public class StartShoppingFragment extends Fragment implements OnMapReadyCallbac
 
     private GoogleMap mMap;
     Button startShopping;
-    DatabaseReference databaseReference;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_start_shopping, container, false);
@@ -41,17 +40,10 @@ public class StartShoppingFragment extends Fragment implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-
         startShopping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String childKey = databaseReference.push().getKey();
-                databaseReference.child(childKey).setValue("Prince");
-                Toast.makeText(getContext(), ""+childKey, Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(getContext(), StoreMapActivity.class));
+                startActivity(new Intent(getContext(), StoreMapActivity.class));
             }
         });
 

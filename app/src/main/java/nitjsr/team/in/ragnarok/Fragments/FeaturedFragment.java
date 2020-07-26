@@ -30,10 +30,10 @@ public class FeaturedFragment extends Fragment {
     TabLayout indicator;
     List<Integer> sliderImages;
     List<String> sliderText;
-    String sliderText1 = "Hi";
-    String sliderText2 = "This";
-    String sliderText4 = "is";
-    String sliderText5 = "Me";
+    String sliderText1 = "";
+    String sliderText2 = "";
+    String sliderText4 = "";
+    String sliderText5 = "";
 
     LinearLayout mItemFinder, mShoppingList, mPriceChecker;
     RelativeLayout mCaptureShoppingList;
@@ -60,10 +60,10 @@ public class FeaturedFragment extends Fragment {
         appliances.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.lowes.com/c/Appliances?int_cmp=Home%3AA2%3AMajorAppliances%3AOther%3APC_Appliances";
+                String url = "https://www.reliancedigital.in/";
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
                 intent.putExtra("url", url);
-                intent.putExtra("title", "Appliances");
+                intent.putExtra("title", "Reliance Ltd.");
                 startActivity(intent);
             }
         });
@@ -71,10 +71,10 @@ public class FeaturedFragment extends Fragment {
         bath.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.lowes.com/l/bath-event.html?int_cmp=Home%3AA2%3AFashionFixtures%3AOther%3APC_Bath";
+                String url = "https://www.bigbazaar.com/";
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
                 intent.putExtra("url", url);
-                intent.putExtra("title", "Bath");
+                intent.putExtra("title", "Big Bazaar");
                 startActivity(intent);
             }
         });
@@ -82,10 +82,10 @@ public class FeaturedFragment extends Fragment {
         lighting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.lowes.com/c/Lighting-ceiling-fans?int_cmp=Home%3AA2%3ALighting%3APct_Off%3APC_Lighting";
+                String url = "https://www.vmartretail.com/";
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
                 intent.putExtra("url", url);
-                intent.putExtra("title", "Lighting");
+                intent.putExtra("title", "V Mart");
                 startActivity(intent);
             }
         });
@@ -93,10 +93,10 @@ public class FeaturedFragment extends Fragment {
         tools.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.lowes.com/c/Tools?int_cmp=Home%3AA2%3AToolsHardware%3AOther%3APC_Tools";
+                String url = "https://www.walmart.com/";
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
                 intent.putExtra("url", url);
-                intent.putExtra("title", "Tools");
+                intent.putExtra("title", "Walmart");
                 startActivity(intent);
             }
         });
@@ -104,10 +104,10 @@ public class FeaturedFragment extends Fragment {
         flooring.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.lowes.com/c/Flooring?int_cmp=Home%3AA2%3AFlooring%3AOther%3APC_Flooring";
+                String url = "https://www.pantaloons.com/";
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
                 intent.putExtra("url", url);
-                intent.putExtra("title", "Flooring");
+                intent.putExtra("title", "Pantaloons");
                 startActivity(intent);
             }
         });
@@ -115,10 +115,10 @@ public class FeaturedFragment extends Fragment {
         outdoor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.lowes.com/l/Outdoor-tools-equipment-Outdoors?int_cmp=Home%3AA2%3AOutdoors%3AOther%3APC_OPE";
+                String url = "https://www.westside.com/";
                 Intent intent = new Intent(getContext(), WebViewActivity.class);
                 intent.putExtra("url", url);
-                intent.putExtra("title", "Outdoor");
+                intent.putExtra("title", "Westside");
                 startActivity(intent);
             }
         });
@@ -140,7 +140,6 @@ public class FeaturedFragment extends Fragment {
         sliderImages.add(R.drawable.paint);
         sliderImages.add(R.drawable.image_5);
         sliderImages.add(R.drawable.smart_home);
-
 
         viewPager.setAdapter(new SliderAdapter(getActivity(), sliderImages, sliderText));
         indicator.setupWithViewPager(viewPager, true);
