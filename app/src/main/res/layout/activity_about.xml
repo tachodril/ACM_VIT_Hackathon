@@ -5,30 +5,52 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <RelativeLayout
+        android:id="@+id/temp_layer25"
+        android:background="@color/linkedin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/back_about"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:tint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_toRightOf="@+id/back_about"
+            android:id="@+id/text_slideshow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/notosans"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textAllCaps="true"
+            android:layout_marginLeft="22dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:text="About"/>
+    </RelativeLayout>
+
     <ImageView
+        android:layout_below="@+id/temp_layer25"
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_margin="8dp"
-        android:src="@drawable/lowes_logo"></ImageView>
-    <TextView
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
-        android:layout_margin="8dp"
-        android:textAlignment="center"
-        android:textSize="23sp"
-        android:textColor="@color/black"
-        android:text="About"/>
+        android:src="@drawable/cloud_shopping"></ImageView>
 
     <TextView
         android:id="@+id/desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:fontFamily="@font/opensans"
+        android:textStyle="bold"
         android:textSize="18sp"
-        android:layout_below="@id/text_slideshow"
+        android:layout_below="@id/imageView"
         android:text="This app helps you find the shelf and floor number of any product present in the store. In addition to that you can create
  your own shopping list and our app will assist you with your shopping list."></TextView>
 
@@ -38,8 +60,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_below="@id/desc"
-        android:background="@color/blue"
+        android:background="@color/linkedin"
         android:text="Visit Store's website"
+        android:fontFamily="@font/notosans"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:textColor="@color/white"></Button>

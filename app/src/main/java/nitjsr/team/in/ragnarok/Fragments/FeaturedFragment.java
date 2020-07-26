@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import nitjsr.team.in.ragnarok.Activity.AboutActivity;
 import nitjsr.team.in.ragnarok.Activity.WebViewActivity;
 import nitjsr.team.in.ragnarok.Carousel.SliderAdapter;
 import nitjsr.team.in.ragnarok.R;
@@ -39,7 +40,7 @@ public class FeaturedFragment extends Fragment {
     RelativeLayout mCaptureShoppingList;
 
     LinearLayout appliances, bath, lighting, tools, flooring, outdoor;
-    Button navigateBtn, storeMap;
+    Button navigateBtn, storeMap, aboutApp;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_featured, container, false);
@@ -50,12 +51,20 @@ public class FeaturedFragment extends Fragment {
         tools = (LinearLayout) root.findViewById(R.id.tools);
         flooring = (LinearLayout) root.findViewById(R.id.flooring);
         outdoor = (LinearLayout) root.findViewById(R.id.outdoor);
+        aboutApp=root.findViewById(R.id.aboutApp);
 
         //carousel
         viewPager = (ViewPager) root.findViewById(R.id.viewPager);
         indicator = (TabLayout) root.findViewById(R.id.indicator);
 
         setCarouselViewPager(); //to implement carousel using viewpager
+
+        aboutApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AboutActivity.class));
+            }
+        });
 
         appliances.setOnClickListener(new View.OnClickListener() {
             @Override
