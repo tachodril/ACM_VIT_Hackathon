@@ -3,7 +3,6 @@ package nitjsr.team.in.ragnarok.utils;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.net.ConnectivityManager;
@@ -15,10 +14,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.FragmentActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,16 +28,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.FragmentActivity;
 import nitjsr.team.in.ragnarok.Activity.SearchItemActivity;
 import nitjsr.team.in.ragnarok.Activity.SearchResultsActivity;
-import nitjsr.team.in.ragnarok.Adapter.MyShoppingListAdapter;
-import nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment;
 import nitjsr.team.in.ragnarok.Modals.ItemModal;
 import nitjsr.team.in.ragnarok.Modals.ListItem;
 import nitjsr.team.in.ragnarok.R;
 
 import static nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment.itemList;
-import static nitjsr.team.in.ragnarok.Fragments.ShoppingListFragment.recyclerView;
 
 public class AppConstants {
     public static ArrayList<ItemModal> mItemList = new ArrayList<>();
