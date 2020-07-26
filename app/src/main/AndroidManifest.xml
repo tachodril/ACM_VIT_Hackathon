@@ -50,6 +50,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.WebViewActivity"/>
+        <activity android:name=".Activity.StoreMapActivity"/>
 
         <provider
             android:name=".utils.MyFileContentProvider"

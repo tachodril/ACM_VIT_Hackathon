@@ -21,18 +21,29 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import nitjsr.team.in.ragnarok.Activity.StoreMapActivity;
 import nitjsr.team.in.ragnarok.R;
 
 public class StartShoppingFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    Button startShopping;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_start_shopping, container, false);
 
+        startShopping=root.findViewById(R.id.startShopping);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        startShopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), StoreMapActivity.class));
+            }
+        });
 
         return root;
     }
