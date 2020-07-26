@@ -30,6 +30,7 @@
             android:text="Create or Scan your Shopping list and Experience the seamless shopping Trip"></TextView>
 
         <TextView
+            android:id="@+id/just_temp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="After creating the shopping list. Click on Start Shopping button to Proceed."
@@ -41,14 +42,22 @@
             android:layout_below="@id/intro"
             android:textAlignment="center"></TextView>
 
+
         <Button
             android:id="@+id/startShopping"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@color/blue"
             android:text="Start Shopping"
             android:layout_alignParentBottom="true"
             android:textColor="@color/white" />
+        <ImageView
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/click_here"
+            android:layout_marginBottom="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="70dp"
+            android:layout_height="70dp"/>
 
     </RelativeLayout>
 
