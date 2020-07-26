@@ -85,14 +85,14 @@ public class ShoppingListFragment extends Fragment {
     }
 
     private void setUpFabItems() {
-        sv_fab.addActionItem(new SpeedDialActionItem.Builder(R.id.item1, getResources().getDrawable(R.drawable.ic_baseline_add_24))
-                .setFabBackgroundColor(Color.WHITE)
-                .setFabImageTintColor(Color.parseColor("#0e76a8"))
-                .setLabel("Add items")
-                .setLabelColor(Color.parseColor("#0e76a8"))
-                .setLabelBackgroundColor(Color.WHITE)
-                .setLabelClickable(true)
-                .create());
+//        sv_fab.addActionItem(new SpeedDialActionItem.Builder(R.id.item1, getResources().getDrawable(R.drawable.ic_baseline_add_24))
+//                .setFabBackgroundColor(Color.WHITE)
+//                .setFabImageTintColor(Color.parseColor("#0e76a8"))
+//                .setLabel("Add items")
+//                .setLabelColor(Color.parseColor("#0e76a8"))
+//                .setLabelBackgroundColor(Color.WHITE)
+//                .setLabelClickable(true)
+//                .create());
         sv_fab.addActionItem(new SpeedDialActionItem.Builder(R.id.item2, getResources().getDrawable(R.drawable.ic_clear_all_black_24dp))
                 .setFabBackgroundColor(Color.WHITE)
                 .setFabImageTintColor(Color.parseColor("#0e76a8"))
@@ -205,19 +205,20 @@ public class ShoppingListFragment extends Fragment {
         sv_fab.setOnActionSelectedListener(new SpeedDialView.OnActionSelectedListener() {
             @Override
             public boolean onActionSelected(SpeedDialActionItem actionItem) {
-                if (actionItem.getId() == R.id.item1) {
-                    if (AppConstants.mItemList.size() == 0) {
-                        if (AppConstants.isNetworkAvailable(getActivity())) {
-                            AppConstants.fetchGoodsItemList(getActivity());
-                        } else {
-                            Toast.makeText(getActivity(), "Please make sure you have a secure internet connection.", Toast.LENGTH_SHORT).show();
-                        }
-                        return true;
-                    }
-
-                    startActivity(new Intent(getActivity(), SearchItemActivity.class));
-                    return true;
-                } else if (actionItem.getId() == R.id.item2) {
+//                if (actionItem.getId() == R.id.item1) {
+//                    if (AppConstants.mItemList.size() == 0) {
+//                        if (AppConstants.isNetworkAvailable(getActivity())) {
+//                            AppConstants.fetchGoodsItemList(getActivity());
+//                        } else {
+//                            Toast.makeText(getActivity(), "Please make sure you have a secure internet connection.", Toast.LENGTH_SHORT).show();
+//                        }
+//                        return true;
+//                    }
+//
+//                    startActivity(new Intent(getActivity(), SearchItemActivity.class));
+//                    return true;
+//                } else
+                    if (actionItem.getId() == R.id.item2) {
                     shref = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
                     Gson gson = new Gson();
                     String response = shref.getString(key, "");

@@ -13,19 +13,19 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B3000000">
+        android:background="#99000000">
 
         <TextView
             android:id="@+id/intro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:fontFamily="@font/notosans"
             android:textAppearance="@style/robotoBold"
-            android:textSize="22sp"
+            android:textSize="25sp"
             android:layout_centerInParent="true"
             android:padding="8dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
+            android:layout_margin="10dp"
             android:textAlignment="center"
             android:text="Create or Scan your Shopping list and Experience the seamless shopping Trip"></TextView>
 
@@ -33,12 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="After creating the shopping list. Click on Start Shopping button to Proceed."
-            android:textSize="18sp"
-            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/notosans"
+            android:textColor="@color/grey"
             android:padding="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_margin="10dp"
             android:layout_below="@id/intro"
             android:textAlignment="center"></TextView>
 
