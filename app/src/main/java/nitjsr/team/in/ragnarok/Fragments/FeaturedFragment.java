@@ -19,6 +19,7 @@ import java.util.TimerTask;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+
 import nitjsr.team.in.ragnarok.Activity.WebViewActivity;
 import nitjsr.team.in.ragnarok.Carousel.SliderAdapter;
 import nitjsr.team.in.ragnarok.R;

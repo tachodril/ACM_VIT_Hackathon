@@ -69,7 +69,7 @@ public class ShoppingListFragment extends Fragment {
         AppConstants.isCreateShoppingListActivityOpen = false;
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_shopping_list, container, false);
 
         init(root);
@@ -132,7 +132,7 @@ public class ShoppingListFragment extends Fragment {
         progressDialog.setMessage("Fetching shopping list...");
         progressDialog.setCancelable(false);
 
-        sv_fab=root.findViewById(R.id.speedDial);
+        sv_fab = root.findViewById(R.id.speedDial);
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
     }
 
@@ -205,7 +205,7 @@ public class ShoppingListFragment extends Fragment {
         sv_fab.setOnActionSelectedListener(new SpeedDialView.OnActionSelectedListener() {
             @Override
             public boolean onActionSelected(SpeedDialActionItem actionItem) {
-                if(actionItem.getId()==R.id.item1){
+                if (actionItem.getId() == R.id.item1) {
                     if (AppConstants.mItemList.size() == 0) {
                         if (AppConstants.isNetworkAvailable(getActivity())) {
                             AppConstants.fetchGoodsItemList(getActivity());
@@ -217,8 +217,7 @@ public class ShoppingListFragment extends Fragment {
 
                     startActivity(new Intent(getActivity(), SearchItemActivity.class));
                     return true;
-                }
-                else if(actionItem.getId()==R.id.item2){
+                } else if (actionItem.getId() == R.id.item2) {
                     shref = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
                     Gson gson = new Gson();
                     String response = shref.getString(key, "");
@@ -260,8 +259,7 @@ public class ShoppingListFragment extends Fragment {
                             });
                     alertDialog.show();
                     return true;
-                }
-                else if(actionItem.getId()==R.id.item3){
+                } else if (actionItem.getId() == R.id.item3) {
                     // switch to tab 5
                 }
                 return false;

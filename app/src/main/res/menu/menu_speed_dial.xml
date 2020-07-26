@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-    android:id="@+id/item1"
-    android:title="Add items"
-    android:icon="@drawable/ic_baseline_add_24"/>
+        android:id="@+id/item1"
+        android:icon="@drawable/ic_baseline_add_24"
+        android:title="Add items" />
     <item
         android:id="@+id/item2"
-        android:title="Clear list"
-        android:icon="@drawable/ic_clear_all_black_24dp"/>
+        android:icon="@drawable/ic_clear_all_black_24dp"
+        android:title="Clear list" />
     <item
         android:id="@+id/item3"
-        android:title="Start shopping"
-        android:icon="@drawable/ic_shopping_cart_black_24dp"/>
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        android:title="Start shopping" />
 </menu>
