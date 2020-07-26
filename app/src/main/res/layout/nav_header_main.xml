@@ -30,7 +30,7 @@
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:fontFamily="@font/notosans"
-        android:text="Lowe's India"
+        android:text="Shopper's App"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="22sp"
         android:textColor="@color/white"/>
