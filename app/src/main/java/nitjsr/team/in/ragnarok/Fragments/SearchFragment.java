@@ -38,6 +38,20 @@ public class SearchFragment extends Fragment {
     }
 
     private void receiveClicks() {
+        searchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (AppConstants.mItemList.size() == 0) {
+                    if (AppConstants.isNetworkAvailable(getActivity())) {
+                        AppConstants.fetchGoodsItemList(getActivity());
+                    } else {
+                        Toast.makeText(getActivity(), "Please make sure you have a secure internet connection.", Toast.LENGTH_SHORT).show();
+                    }
+                    return;
+                }
+                startActivity(new Intent(getContext(), SearchItemActivity.class));
+            }
+        });
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

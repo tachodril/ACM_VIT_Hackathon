@@ -1,4 +1,4 @@
-package nitjsr.team.in.ragnarok;
+package nitjsr.team.in.ragnarok.Activity;
 
 import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import nitjsr.team.in.ragnarok.R;
 import nitjsr.team.in.ragnarok.utils.AppConstants;
 
 import static nitjsr.team.in.ragnarok.utils.AppConstants.fetchGoodsItemList;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 //            fetchItemList();
 //        }
         if (AppConstants.mItemList.size() == 0) {
-            fetchGoodsItemList(MainActivity.this);
+            fetchGoodsItemList(this);
         }
     }
 

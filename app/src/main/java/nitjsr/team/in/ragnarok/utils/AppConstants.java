@@ -274,7 +274,7 @@ public class AppConstants {
 
                 alertDialogOtp.dismiss();
 
-                mSearchResultsActivity.finish();
+                //mSearchResultsActivity.finish();
 
 //                AppConstants.mCreateShoppingListActivity.recyclerView
 //                        .setAdapter(new MyShoppingListAdapter(

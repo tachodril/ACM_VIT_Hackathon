@@ -104,7 +104,7 @@ public class ShoppingListFragment extends Fragment {
         sv_fab.addActionItem(new SpeedDialActionItem.Builder(R.id.item3, getResources().getDrawable(R.drawable.ic_shopping_cart_black_24dp))
                 .setFabBackgroundColor(Color.WHITE)
                 .setFabImageTintColor(Color.parseColor("#0e76a8"))
-                .setLabel("Start shopping")
+                .setLabel("Proceed to shop")
                 .setLabelColor(Color.parseColor("#0e76a8"))
                 .setLabelBackgroundColor(Color.WHITE)
                 .setLabelClickable(true)
