@@ -6,6 +6,7 @@
         android:title="Add items" />
     <item
         android:id="@+id/item2"
+        android:iconTint="@color/linkedin"
         android:icon="@drawable/ic_clear_all_black_24dp"
         android:title="Clear list" />
     <item

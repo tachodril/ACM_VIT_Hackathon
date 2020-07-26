@@ -32,8 +32,8 @@
             android:id="@+id/speedDial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:sdMainFabClosedBackgroundColor="@color/white"
-            app:sdMainFabClosedSrc="@drawable/ic_baseline_add_24"
-            app:sdMainFabOpenedBackgroundColor="@color/white" />
+            app:sdMainFabClosedBackgroundColor="@color/linkedin"
+            app:sdMainFabClosedSrc="@drawable/ic_baseline_add_24_white"
+            app:sdMainFabOpenedBackgroundColor="@color/linkedin" />
     </RelativeLayout>
 </RelativeLayout>

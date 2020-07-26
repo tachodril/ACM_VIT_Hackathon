@@ -38,7 +38,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void receiveClicks() {
-        searchBar.setOnClickListener(new View.OnClickListener() {
+        editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (AppConstants.mItemList.size() == 0) {
@@ -69,7 +69,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void init(View root) {
-        //editText = root.findViewById(R.id.search_input);
+        editText = root.findViewById(R.id.search_input);
         searchBar=root.findViewById(R.id.search_bar2);
 //        textInputLayout=root.findViewById(R.id.search_input);
 //        textInputEditText=root.findViewById(R.id.search_text);

@@ -56,6 +56,7 @@ public class SearchItemActivity extends AppCompatActivity {
 
         Log.e("onCreate: ", AppConstants.searchKeyWord);
         init();
+        getSupportActionBar().hide();
         receiveClicks();
         enterSearchText.setText(AppConstants.searchKeyWord);
     }
